@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-50: #e8f4f8;
+    --color-primary-100: #d1e8f0;
+    --color-primary-200: #a3d1df;
+    --color-primary-300: #75b9cf;
+    --color-primary-400: #4B8CA6;
+    --color-primary-500: #4B8CA6;
+    /* Primary Light */
+    --color-primary-600: #2C5F73;
+    /* Primary Hover */
+    --color-primary-700: #214756;
+    --color-primary-800: #162f39;
+    --color-primary-900: #0b181c;
+    --color-primary-950: #060c0e;
+
+    --color-secondary-50: #D0ECF2;
+    /* Background Light */
+    --color-secondary-100: #b5e1eb;
+    --color-secondary-200: #99d6e4;
+    --color-secondary-300: #7EADBF;
+    /* Secondary Light */
+    --color-secondary-400: #6294a6;
+    --color-secondary-500: #4d7583;
+    --color-secondary-600: #385661;
+    --color-secondary-700: #23373e;
+    --color-secondary-800: #18313D;
+    /* Surface Dark */
+    --color-secondary-900: #0F1E25;
+    /* Background Dark */
+    --color-secondary-950: #081014;
+
+    --color-accent-50: #f4e8e4;
+    --color-accent-100: #e9d1c9;
+    --color-accent-200: #d4a393;
+    --color-accent-300: #bf755d;
+    --color-accent-400: #A6634B;
+    --color-accent-500: #A6634B;
+    /* Accent Light */
+    --color-accent-600: #88513e;
+    --color-accent-700: #693f30;
+    --color-accent-800: #2d1b14;
+    --color-accent-900: #0e0806;
+  }
+
+  /* Dark mode global overrides */
+  html.dark {
+    --color-primary-50: #060c0e;
+    --color-primary-100: #0b181c;
+    --color-primary-200: #162f39;
+    --color-primary-300: #214756;
+    --color-primary-400: #2F6E86;
+    --color-primary-500: #2F6E86;
+    /* Primary Dark */
+    --color-primary-600: #4B8CA6;
+    /* Hover Dark */
+    --color-primary-700: #75b9cf;
+    --color-primary-800: #a3d1df;
+    --color-primary-900: #d1e8f0;
+    --color-primary-950: #e8f4f8;
+
+    --color-secondary-50: #eef8fa;
+    --color-secondary-100: #cceef6;
+    --color-secondary-200: #aaddf0;
+    --color-secondary-300: #5FA8C4;
+    /* Secondary Dark */
+    --color-secondary-400: #4d90a9;
+    --color-secondary-500: #3a7185;
+    --color-secondary-600: #2a5a6c;
+    --color-secondary-700: #1e4554;
+    --color-secondary-800: #18313D;
+    /* Surface/Card Dark */
+    --color-secondary-900: #0F1E25;
+    /* Background Dark */
+    --color-secondary-950: #081014;
+
+    --color-accent-50: #0e0806;
+    --color-accent-100: #180d0a;
+    --color-accent-200: #2d1b14;
+    --color-accent-300: #4b2d22;
+    --color-accent-400: #C27A60;
+    --color-accent-500: #C27A60;
+    /* Accent Dark */
+    --color-accent-600: #d69780;
+    --color-accent-700: #e4afa0;
+    --color-accent-800: #f1c9c0;
+    --color-accent-900: #fbe6e1;
+  }
+
+  body {
+    @apply bg-secondary-50 text-secondary-900 font-sans antialiased transition-colors duration-500 relative;
+    background-image:
+      radial-gradient(at 0% 0%, hsla(200, 100%, 95%, 0.8) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(190, 100%, 90%, 0.8) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(205, 100%, 93%, 0.6) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(185, 100%, 90%, 0.5) 0px, transparent 50%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
+
+  html.dark body {
+    @apply bg-secondary-950 text-secondary-50;
+    background-image:
+      radial-gradient(at 0% 0%, hsla(200, 50%, 8%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(190, 60%, 12%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(205, 70%, 5%, 1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(185, 40%, 10%, 1) 0px, transparent 50%);
+  }
+}
+
+@layer components {
+  /* --- Global Interactive Components --- */
+
+  .btn-primary {
+    @apply px-5 py-3 bg-gradient-to-r from-primary-600 to-indigo-600 text-white rounded-xl hover:brightness-110 active:scale-[0.97] transition-all duration-300 font-bold tracking-wide disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 flex items-center justify-center relative overflow-hidden ring-1 ring-white/20;
+    box-shadow: 0 8px 16px -6px rgba(75, 140, 166, 0.5);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 12px 24px -8px rgba(75, 140, 166, 0.6);
+  }
+
+  .btn-secondary {
+    @apply px-5 py-3 bg-white/70 text-secondary-800 border border-white/60 rounded-xl hover:bg-white shadow-sm hover:shadow-md active:scale-[0.97] transition-all duration-300 font-bold tracking-wide disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 flex items-center justify-center backdrop-blur-md;
+  }
+
+  .btn-accent {
+    @apply px-5 py-3 bg-gradient-to-r from-accent-500 to-emerald-600 text-white rounded-xl hover:brightness-110 active:scale-[0.97] transition-all duration-300 font-bold tracking-wide disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center ring-1 ring-white/20;
+    box-shadow: 0 8px 16px -6px rgba(166, 99, 75, 0.5);
+  }
+
+  .btn-accent:hover {
+    box-shadow: 0 12px 24px -8px rgba(166, 99, 75, 0.6);
+  }
+
+  /* --- Form Elements --- */
+
+  .input-field {
+    @apply w-full px-5 py-4 bg-white/60 border border-white/50 rounded-xl focus:ring-4 focus:ring-primary-100 focus:border-primary-500 outline-none transition-all duration-300 backdrop-blur-md placeholder-secondary-400 shadow-inner text-sm font-medium hover:bg-white/80;
+  }
+
+  .label-text {
+    @apply block text-sm font-bold text-secondary-700 mb-2 ml-1 transition-colors duration-200 tracking-wide;
+  }
+
+  /* --- Layout & Containers --- */
+
+  .card {
+    @apply bg-white/80 backdrop-blur-xl rounded-2xl border border-white/50 overflow-hidden transition-all duration-500;
+    box-shadow: 0 8px 30px rgb(0, 0, 0, 0.04);
+  }
+
+  .card-hover {
+    @apply card hover:-translate-y-2 hover:border-primary-200 cursor-pointer;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 20px 40px rgb(0, 0, 0, 0.08);
+  }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-2xl border border-white/60 rounded-2xl transition-all duration-300;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  }
+
+  .glass-advanced {
+    @apply bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-2xl border border-white/60 rounded-3xl relative overflow-hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  }
+
+  /* --- Miscellaneous Elements --- */
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-md transition-all shadow-sm tracking-wider uppercase;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-soft {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary-300 dark:bg-secondary-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-400 dark:bg-secondary-600;
+}
