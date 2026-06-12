@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎓 CampusConnect
+#  CampusConnect
 
 ### *The Ultimate Campus Management Ecosystem*
 
@@ -18,7 +18,7 @@
 
 </div>
 
-## ✨ Key Features
+##  Key Features
 
 <table>
 <tr>
@@ -33,7 +33,7 @@
 </td>
 <td width="50%">
 
-### 🎖️ AI Certificate Engine
+###  AI Certificate Engine
 - Auto-generated upon student attendance
 - Unique AI-written achievement descriptions per student
 - Premium PDF design with dark-themed certificate
@@ -149,7 +149,7 @@ campusConnect/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
